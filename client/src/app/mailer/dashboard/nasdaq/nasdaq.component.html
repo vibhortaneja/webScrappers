@@ -1,0 +1,103 @@
+<app-navbar></app-navbar>
+<div class="container-fluid" style="margin-top: 55px;">
+  <div class="row">
+    <!--Conatiner for Sidebar -->
+    <div class="col-md-2">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-md-8">
+      <div class="d-flex d-md-block flex-nowrap wrapper">
+        <div class="float-left col px-5 pl-md-2 pt-2 main">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <br>
+  <div class="row">
+    <div class="col-md-2">
+    </div>
+
+    <div class="col-md-2">
+      <div class="d-flex d-md-block flex-nowrap wrapper">
+        <div class="float-left col px-5 pl-md-2 pt-2 main">
+          <select #selectedname class="drop">
+            <option [value]="post.Code" *ngFor="let post of nasdaqcode">
+              {{post.Company}}
+            </option>
+          </select>
+          <!-- search button to search news-->
+          <div class="col-md-2">
+            <button id="search" (click)="search(selectedname.value)" class="btn btn-outline-primary" type="button"> {{config.dashboard.SEARCH}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-8">
+      <div class="jumbotron jumbotron-fluid marg container text">
+        <div class="row">
+        <!-- stock data of selcted company-->
+          <div class="col-md-3" *ngFor="let data of stockprice">
+            <p>{{data.closeAt}}</p>
+            <h4>${{data.Price}}</h4>
+            <h6>{{data.upDown}}</h6>
+            <p>AFTER HOURS</p>
+            <h4>${{data.hPrice}}</h4>
+            <p>{{data.hupdown}}</p>
+          </div>
+          <div class="col-md-4">
+            <div class="size">
+            <!-- chart for selected company-->
+              <canvas baseChart [data]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [chartType]="lineChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1">
+      </div>
+      <div class="col-md-7">
+        <b><p class="h4">{{header}}</p></b>
+        <hr>
+        <!-- news of selected company-->
+        <div *ngFor="let data of stocknews">
+          <div class="card text-white mb-3" style="background-color: #80cbc4;" *ngIf=data.news>
+            <div class="card-body">
+              <p class="h7" style="color: #333">{{data.news}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div>
+        <!-- tweets for selected company -->
+          <b><p class="h4" style="text-align:center">{{tweets}}</p></b>
+          <div class="card text-white mb-3" style="background-color:white;" *ngFor="let data of investmentProductuser">
+            <div class="card-body">
+              <i class="fa fa-twitter" aria-hidden="true" style="color: #33b5e5"></i>
+              <p style="color: #333">{{data.text}}</p>
+              <div *ngIf="data.entities.urls[0]">
+                <a href="{{data.entities.urls[0].url}}">{{config.nasdaq.READ_MORE}}</a>
+              </div>
+              <div *ngIf="data.entities.media">
+                <img class="img" src="{{data.entities.media[0].media_url}}">
+              </div>
+            </div>
+            <div class="card-data">
+              <h6 style="color:black;"><i class="fa fa-clock-o"></i>{{data.created_at}} </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

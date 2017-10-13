@@ -1,0 +1,82 @@
+/* for dashboard content */
+/* margin for news */
+.marg {
+  margin-left: 7%;
+  margin-top: 7%;
+}
+
+.drop {
+  width: 200px !important;
+}
+
+/* color for jumbotron */
+.text {
+	color: white;
+ background-color:black;
+}
+
+/* for the news list */
+.list li {
+  float: left;
+  margin-left: 10px;
+}
+
+.list {
+  list-style: none;
+}
+
+/* for image in tweets */
+.img {
+  width: 100%;
+}
+
+/* for the position of news */
+.profile {
+  position: absolute;
+  top: -12px;
+  display: inline-block;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 25px;
+  height: 25px;
+  margin: 0;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+
+.profile-avatar {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.profile-inline {
+  position: relative;
+  top: 0;
+  display: inline-block;
+}
+
+
+.profile-inline ~ .card-title {
+   display: inline-block;
+   margin-left: 4px;
+   vertical-align: top;
+}
+
+/* card fro twitter data */
+.card-data{
+  background-color:white;
+  margin-left: 3%;
+
+}
+
+.fa {
+  margin-right: 1%;
+}
+
+/* size of image in tweets */
+.size{
+    height:100%;
+    width: 100%;
+}

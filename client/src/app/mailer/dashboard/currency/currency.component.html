@@ -1,0 +1,45 @@
+<!--     Fonts and icons     -->
+<app-navbar></app-navbar>
+<div class="container-fluid">
+  <div class="row">
+    <!--Conatiner for Sidebar -->
+    <div class="col-md-2">
+      <app-sidebar></app-sidebar>
+    </div>
+    <!--Conatiner for Details -->
+    <div class="col-md-6">
+      <div class="d-flex d-md-block flex-nowrap wrapper">
+        <div class="float-left col px-5 pl-md-2 pt-2 main">
+          <br>
+          <div class="card text-white mb-3 cardStyle" *ngFor="let post of list">
+            <div class="card-body">
+              <h6 class="text-uppercase"><b>{{post.Time}}</b></h6>
+              <p class="h4 text-uppercase"><b>{{post.Headline}}</b></p>
+              <p class="h7">{{post.News}}</p>
+              <hr>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Conatiner for Tweetes -->
+    <div class="col-md-4 tweetMarg">
+      <b><p class="h4">{{tweets}}</p></b>
+      <div class="card text-white mb-3 twitterBackground" *ngFor="let data of investmentProductuser">
+        <div class="card-body">
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+          <p>{{data.text}}</p>
+          <div *ngIf="data.entities.urls[0]">
+              <a href="{{data.entities.urls[0].url}}">{{config.currency.READ_MORE}}</a>
+            </div>
+          <div *ngIf="data.entities.media">
+            <img class="img" src="{{data.entities.media[0].media_url}}">
+          </div>
+        </div>
+        <div class="card-data">
+          <h6><i class="fa fa-clock-o"></i>{{data.created_at}} </h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

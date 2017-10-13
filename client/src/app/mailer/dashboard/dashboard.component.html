@@ -1,0 +1,35 @@
+<!--     Fonts and icons     -->
+<app-navbar></app-navbar>
+<div class="container-fluid">
+  <div class="row">
+    <!--Conatiner for Sidebar -->
+    <div class="col-md-2">
+      <app-sidebar></app-sidebar>
+    </div>
+
+    <div class="col-md-1">
+    </div>
+    <!--Conatiner for Details -->
+    <div class="col-md-8 tweetMarg marginn">
+      <div class="card text-white mb-3 bgcolor" *ngFor="let data of investmentProductuser">
+        <!-- <div class="card text-center"> -->
+        <div class="card-block">
+          <div class="card-body">
+            <i class="fa fa-twitter nameColor" aria-hidden="true">@Schuldensuehner</i>
+            <p class="tweetColor">{{data.text}}</p>
+            <div *ngIf="data.entities.urls[0]">
+              <a class="read" href="{{data.entities.urls[0].url}}">{{config.dashboard.READ_MORE}}</a>
+            </div>
+            <div *ngIf="data.entities.media">
+              <img class="img" src="{{data.entities.media[0].media_url}}">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer text-muted">
+
+          <h6 class="dateColor"><i class="fa fa-clock-o"></i>{{data.created_at}} </h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

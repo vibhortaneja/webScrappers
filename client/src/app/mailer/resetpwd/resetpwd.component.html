@@ -1,0 +1,81 @@
+<section class="login-block">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 banner-sec">
+        <!-- Carousel section for displaying images -->
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          </ol>
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+              <img class="d-block img-fluid" src="https://static.pexels.com/photos/33972/pexels-photo.jpg" alt="First slide">
+              <div class="carousel-caption d-none d-md-block">
+                <div class="banner-text">
+                  <h2 id="heading">{{config.resetpwd.STOCK_MARKET}}</h2>
+                  <p>{{config.resetpwd.PIC}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img class="d-block img-fluid" src="https://images.pexels.com/photos/7097/people-coffee-tea-meeting.jpg" alt="First slide">
+              <div class="carousel-caption d-none d-md-block">
+                <div class="banner-text">
+                  <h2>{{config.resetpwd.STOCK_MARKET}}</h2>
+                  <p>{{config.resetpwd.PIC_TWO}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 login-sec">
+        <!-- Reset Password Form -->
+        <h2 class="text-center">{{config.resetpwd.RESET_PASSWORD}}</h2>
+        <form class="reset-form">
+          <form [formGroup]="form" #formDir="ngForm">
+            <!-- <div [hidden]="formDir.submitted"> -->
+            <div class="form-group">
+              <div class="row">
+                <input id="pwd" type="password" class="form-control" name="pwd" placeholder="Password" formControlName="pwd" required #resetpwd>
+                <div *ngIf="pwd.invalid && (pwd.dirty || pwd.touched)">
+                  <div *ngIf="pwd.errors.required">
+                    Password is required.
+                  </div>
+                  <div *ngIf="pwd.errors.minlength">
+                    Password can't be so small.
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <input id="cpwd" type="password" class="form-control" name="cpwd" value="" placeholder={{config.resetpwd.CONFIRM_PASSWORD}} formControlName="cpwd" required>
+                <div *ngIf="cpwd.invalid && (cpwd.dirty || cpwd.touched)">
+                  <div *ngIf="cpwd.errors.required">
+                    Password is required.
+                  </div>
+                  <div *ngIf="cpwd.errors.minlength">
+                    Password must be 8 characters long .
+                  </div>
+                  <div *ngIf="cpwd.errors.maxlength">
+                    Password must be 8 characters long .
+                  </div>
+                  <div *ngIf="cpwd!=pwd">
+                    Passwords donot match.
+                  </div>
+                </div>
+              </div>
+              <div>
+                <button type="submit" class="btn btn-primary" [disabled]="form.invalid" (click)="reset(resetpwd.value)">{{config.resetpwd.RESET_PASSWORD}}</button>
+              </div>
+            </div>
+            <!-- </div> -->
+          </form>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<div *ngIf="alert" id="alert" class="alert-{{alert.type}}">
+  {{alert.message}}
+</div>

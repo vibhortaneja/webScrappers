@@ -1,0 +1,140 @@
+<section class="login-block">
+  <!-- parent conatiner -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 banner-sec">
+        <!-- Carousel section for displaying images -->
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          </ol>
+          <!-- Carousel first image section -->
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+              <img class="d-block img-fluid" src="https://static.pexels.com/photos/33972/pexels-photo.jpg" alt="First slide">
+              <div class="carousel-caption d-none d-md-block">
+                <div class="banner-text">
+                  <h2>{{config.signup.STOCK_MARKET}}</h2>
+                  <p>The real key to making money in stocks is not to get scared out of them.</p>
+                </div>
+              </div>
+            </div>
+            <!-- Carousel second image section -->
+            <div class="carousel-item">
+              <img class="d-block img-fluid" src="https://images.pexels.com/photos/7097/people-coffee-tea-meeting.jpg" alt="First slide">
+              <div class="carousel-caption d-none d-md-block">
+                <div class="banner-text">
+                  <h2>{{config.signup.STOCK_MARKET}}</h2>
+                  <p>Stock market bubbles don't grow out of thin air. They have a solid basis in reality, but reality as distorted by a misconception.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- login section -->
+      <div class="col-md-4 login-sec">
+        <!-- Registration Form Starts-->
+        <h2 class="text-center">{{config.signup.REGISTER}}</h2>
+        <form class="login-form">
+          <form [formGroup]="form" #formDir="ngForm">
+            <!-- <div [hidden]="formDir.submitted"> -->
+            <div class="form-group">
+              <div class="row">
+                <input id="name" type="text" class="form-control name" name="pwd" placeholder={{config.signup.NAME}} formControlName="name" required [(ngModel)]="nameFirst">
+                <!-- Validation on the required name field -->
+                <div *ngIf="name.invalid && (name.dirty || name.touched)">
+                  <div *ngIf="name.errors.required">
+                    Name is required.
+                  </div>
+                  <div *ngIf="name.errors.minlength">
+                    Name must be atleast 3 characters long .
+                  </div>
+                  <div *ngIf="name.errors.pattern">
+                    Name should only have alphabets.
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <input id="email" type="email" class="form-control" name="email" placeholder={{config.signup.EMAIL_ADDRESS}} formControlName="email" required [(ngModel)]="emailID">
+                <!-- Validation on the required email field -->
+                <div *ngIf="email.invalid && (email.dirty || email.touched)">
+                  <div *ngIf="email.errors.required">
+                    Email is required.
+                  </div>
+                  <div *ngIf="email.errors.pattern">
+                    Email must contain @.
+                  </div>
+                  <div *ngIf="email.errors.minlength">
+                    Email must be at least 4 characters long.
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <input id="mobile" type="text" class="form-control" name="mobile" placeholder={{config.signup.MOBILE}} formControlName="mobile" required [(ngModel)]="mobileNo">
+                <!-- Validation on the required mobile field -->
+                <div *ngIf="mobile.invalid && (mobile.dirty || mobile.touched)">
+                  <div *ngIf="mobile.errors.required">
+                    Mobile No is required.
+                  </div>
+                  <div *ngIf="mobile.errors.minlength">
+                    Mobile No must be 10 characters long .
+                  </div>
+                  <div *ngIf="mobile.errors.maxlength">
+                    Mobile No must be 10 characters long .
+                  </div>
+                  <div *ngIf="mobile.errors.pattern">
+                    Mobile No should only contain numbers.
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <input id="pwd" type="password" class="form-control" name="pwd" placeholder={{config.signup.PASSWORD}} formControlName="pwd" required [(ngModel)]="pwdFirst">
+                <!-- Validation on the required password field -->
+                <div *ngIf="pwd.invalid && (pwd.dirty || pwd.touched)">
+                  <div *ngIf="pwd.errors.required">
+                    Password is required.
+                  </div>
+                  <div *ngIf="pwd.errors.minlength">
+                    Password must be 8 characters long .
+                  </div>
+                  <div *ngIf="pwd.errors.maxlength">
+                    Password must be 8 characters long .
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <input id="cpwd" type="password" class="form-control " name="cpwd" placeholder={{config.signup.PASSWORD}} formControlName="cpwd" required [(ngModel)]="pwdConf">
+                <!-- Validation on the confirm password field -->
+                <div *ngIf="cpwd.invalid && (cpwd.dirty || cpwd.touched)">
+                  <div *ngIf="cpwd.errors.required">
+                    Password is required.
+                  </div>
+                  <div *ngIf="cpwd.errors.minlength">
+                    Password must be 8 characters long .
+                  </div>
+                  <div *ngIf="cpwd.errors.maxlength">
+                    Password must be 8 characters long .
+                  </div>
+                  <div *ngIf="cpwd!=pwd">
+                    Passwords donot match.
+                  </div>
+                </div>
+              </div>
+              <!-- Registration form ends -->
+              <div class="btn" align="center">
+                <!-- Register Button -->
+                <button id="register" type="submit" class="btn btn-primary" [disabled]="form.invalid" (click)="addUser(nameFirst,emailID,mobileNo,pwdFirst,pwdConf)" style="width: 100%">{{config.signup.REGISTER}}</button>
+              </div>
+              <div align="center">
+                <a [routerLink]="'/login'">{{config.signup.ACCOUNT_EXIST}}{{config.signup.LOGIN}}</a>
+              </div>
+            </div>
+            <!-- </div> -->
+          </form>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

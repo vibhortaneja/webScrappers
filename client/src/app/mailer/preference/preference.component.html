@@ -1,0 +1,35 @@
+<!--view for Modal for preference setting -->
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">{{config.preference.PREFERENCE}}</h5>
+      <button type="button" class="close" (click)="close()">&times;</button>
+    </div>
+    <div class="modal-body">
+
+    <!-- label for investment type -->
+      <label>{{config.preference.INVESTMENT_TYPE}}</label>
+
+      <!-- multi check list for investment type -->
+      <angular2-multiselect [data]="placeholderExampleList" [(ngModel)]="placeholderExampleSelectedItems" [settings]="placeholderExampleSettings" (onSelect)="onItemSelect($event)" (onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)"></angular2-multiselect>
+
+      <!-- label for set frequency -->
+      <label>{{config.preference.SELECT_FREQUENCY_OF_MAIL}}</label>
+
+      <!-- display list for select frequency using radio button  -->
+      <div class="container">
+        <div *ngFor="let frequency of frequency" class="radio">
+          <label>
+            <input type="radio" name="frequency" id="duration" [(ngModel)]="user.frequency" [value]="frequency.display"> {{frequency.display}}
+          </label>
+        </div>
+      </div>
+
+      <!-- button to save data into database -->
+      <div class="btn container">
+        <form #f="ngForm" novalidate>
+          <button type="submit" class="btn btn-primary" (click)="save(user.frequency, f.valid);confirm()">{{config.preference.SUBMIT}}</button>
+        </form>
+      </div>
+    </div>
+  </div>

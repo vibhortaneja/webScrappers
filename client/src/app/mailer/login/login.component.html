@@ -1,0 +1,93 @@
+<section class="login-block">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 banner-sec">
+        <!-- Carousel section for displaying images -->
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          </ol>
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+              <img class="d-block img-fluid" src="https://static.pexels.com/photos/33972/pexels-photo.jpg" alt="First slide">
+              <div class="carousel-caption d-none d-md-block">
+                <div class="banner-text">
+                  <h2>{{config.login.STOCK_MARKET}}</h2>
+                  <p>{{config.login.PICTURE_DESCRIPTION_1}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img class="d-block img-fluid" src="https://images.pexels.com/photos/7097/people-coffee-tea-meeting.jpg" alt="First slide">
+              <div class="carousel-caption d-none d-md-block">
+                <div class="banner-text stockmarket">
+                  <h2>{{config.login.STOCK_MARKET}}</h2>
+                  <p>{{config.login.PICTURE_DESCRIPTION_2}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 login-sec">
+        <!-- Login Form -->
+        <h2 class="text-center">{{config.login.LOGIN}}</h2>
+        <form class="login-form">
+          <form [formGroup]="form" #formDir="ngForm">
+            <div class="form-group">
+              <div class="row">
+                <input id="email" type="email" class="form-control" name="email" placeholder={{config.login.EMAIL}} formControlName="email" required [(ngModel)]="emailID">
+                <div *ngIf="email.invalid && (email.dirty || email.touched)">
+                  <div *ngIf="email.errors.required">
+                    Email is required.
+                  </div>
+                  <div *ngIf="email.errors.pattern">
+                    Email must contain @.
+                  </div>
+                  <div *ngIf="email.errors.minlength">
+                    Email must be least 4 characters long.
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <input id="pwd" type="password" class="form-control" name="pwd" placeholder={{config.login.PASSWORD}} formControlName="pwd" required [(ngModel)]="password">
+                <div *ngIf="pwd.invalid && (pwd.dirty || email.touched)">
+                  <div *ngIf="pwd.errors.required">
+                    Password is required.
+                  </div>
+                  <div *ngIf="pwd.errors.minlength">
+                    Password can't be so small.
+                  </div>
+                </div>
+              </div>
+              <div>
+                <a [routerLink]="'/forgot'" style="color: blue">{{config.login.FORGET_PASSWORD}}</a>
+              </div>
+              <div *ngIf="alert" id="alert" class="alert-{{alert.type}}">
+                {{alert.message}}
+              </div>
+              <div>
+                <div class="row">
+                  <div class="btn">
+                    <button id="loginbutton" type="submit" class="btn btn-primary  button btnsize" [disabled]="form.invalid" (click)="checkUser(emailID,password)">{{config.login.LOGIN}}</button>
+                    <button class="btn btn-primary button " [routerLink]="'/signup'">{{config.login.NEW_USER}}</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- </div> -->
+          </form>
+        </form>
+        <div class="buttonLogin">
+          <button class="loginBtn loginBtn--facebook" (click)='loginByFacebook()'>
+            {{config.login.FACEBOOK}}
+          </button>
+          <button class="loginBtn loginBtn--google" (click)='loginByGoogle()'>
+            {{config.login.GOOGLE}}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

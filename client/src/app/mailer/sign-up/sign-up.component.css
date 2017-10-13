@@ -1,0 +1,109 @@
+/* section height*/
+.section {
+  height: 100%;
+}
+
+/*validation css*/
+.ng-valid.required {
+  border-left: 5px solid #42A948;
+}
+
+/*validation css*/
+.ng-invalid:not(form) {
+  border-left: 5px solid #a94442;
+}
+
+/*login block*/
+.login-block {
+  background: #DE6262;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #FFB88C, #DE6262);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #333, #DE6262);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  float: left;
+  width: 100%;
+  padding: 50px 0;
+}
+
+/*banner section*/
+.banner-sec {
+  background: url(https://static.pexels.com/photos/33972/pexels-photo.jpg) no-repeat left bottom;
+  background-size: cover;
+  min-height: 500px;
+  border-radius: 0 10px 10px 0;
+  padding: 0;
+}
+
+/*container*/
+.container {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 15px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+/*carousel section styling*/
+.carousel-inner {
+  border-radius: 0 10px 10px 0;
+}
+
+/*carousel caption*/
+.carousel-caption {
+  text-align: left;
+  left: 5%;
+}
+
+/*form section styling*/
+.login-sec {
+  padding: 50px 30px;
+  position: relative;
+}
+
+/*login section*/
+.login-sec .copy-text {
+  position: absolute;
+  width: 80%;
+  bottom: 20px;
+  font-size: 13px;
+  text-align: center;
+}
+
+/*login section*/
+.login-sec .copy-text i {
+  color: #FEB58A;
+}
+
+/*login section*/
+.login-sec .copy-text a {
+  color: #E36262;
+}
+
+/*login section heading*/
+.login-sec h2 {
+  margin-bottom: 30px;
+  font-weight: 800;
+  font-size: 30px;
+  color: #DE6262;
+}
+
+/*button styling */
+.btn-link {
+  color: red;
+}
+
+/*button margins*/
+.btn {
+  margin-left: 20%;
+  margin-top: 5%;
+}
+
+/*image width and height*/
+.img-fluid {
+  max-width: 100%;
+  height: 710px;
+}
+
+/*margins*/
+.col-md-4 .row {
+  margin-top: 6%;
+}

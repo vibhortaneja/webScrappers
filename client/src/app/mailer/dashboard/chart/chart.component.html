@@ -1,0 +1,21 @@
+<!--nav bar-->
+<app-navbar></app-navbar>
+<div class="container-fluid">
+  <div class="row">
+    <!--Conatiner for Sidebar -->
+    <div class="col-md-2">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-8">
+      <!-- container for first chart -->
+      <div class="canvasstyle ">
+        <canvas id="canvas" baseChart width="400" height="400" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)"></canvas>
+      </div>
+      <!-- container for second chart -->
+      <div class="canvasstyle">
+        <canvas id="canvas" baseChart width="400" height="400" [datasets]="lineChartData1" [labels]="lineChartLabels1" [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)"></canvas>
+      </div>
+    </div>
+  </div>
+</div>

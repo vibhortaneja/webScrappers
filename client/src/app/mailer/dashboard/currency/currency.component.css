@@ -1,0 +1,147 @@
+/**
+ * margin top
+ */
+
+.container-fluid {
+  margin-top: 55px;
+}
+
+/**
+ * card background color
+ */
+
+.cardStyle {
+  background-color: #80cbc4;
+}
+
+/**
+ * heading color
+ */
+
+.card-body h6 {
+  color: #004d40;
+}
+
+/**
+ * heading color
+ */
+
+.h7 {
+  color: #333;
+}
+
+/* for dashboard content */
+.color {
+  background-color: red;
+}
+
+/*
+margins
+ */
+
+.marg {
+  margin-left: 7%;
+}
+
+/**
+ * width
+ */
+
+.drop {
+  width: 200px !important;
+}
+
+/**
+ * text styling
+ */
+
+.text {
+  color: white;
+  font-weight: bold;
+  background-color: black;
+}
+
+/**
+ * lists
+ */
+
+.list li {
+  float: left;
+  margin-left: 10px;
+}
+
+/**
+ * no bullets
+ */
+
+.list {
+  list-style: none;
+}
+
+/**
+ * image width
+ */
+.img {
+  width: 100%;
+}
+
+/**
+ * card background color
+ */
+.card-data {
+  background-color: white;
+  margin-left: 3%;
+}
+
+/**
+ * right margin
+ */
+.fa {
+  margin-right: 1%;
+}
+
+/**
+ * margin container top margin
+ */
+.tweetMarg{
+  margin-top: 1%
+}
+
+/**
+ * background color for card
+ */
+.twitterBackground{
+  background-color:white;
+}
+
+/**
+ * twitter colors
+ */
+.fa-twitter{
+  color: #33b5e5;
+}
+
+/**
+ * card body color
+ */
+.card-body p{
+ color: #333;
+}
+
+/**
+ * card data heading
+ */
+.card-data h6{
+  color:black;
+}
+
+/**
+ * [media description] media queries
+ * @param  {[type]} max-width: 767px         [description]
+ * @return {[type]}            [description]
+ */
+@media (max-width: 767px) {
+  .tweetMarg {
+    margin-left: 10%;
+  }
+}

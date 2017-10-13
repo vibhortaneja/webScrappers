@@ -1,0 +1,61 @@
+/**
+ * settings background color
+ */
+
+.settings {
+  background-color: #c8e6c9;
+}
+
+
+/**
+ * body background color
+ */
+
+body {
+  background: linear-gradient(to bottom, #333, #DE6262);
+  background-color: cover;
+  background-repeat: repeat-y;
+}
+
+
+
+/**
+ * heading styling
+ */
+
+h3 {
+  color: white;
+  justify-content: center;
+}
+
+
+
+/**
+ * top margin
+ */
+
+.margin {
+  margin-top: 7%;
+}
+
+
+
+/**
+ * settings color
+ */
+
+.settingsColor {
+  color: black
+}
+
+.marg{
+	margin-top: 7%;
+}
+
+
+@media (min-width: 767px){
+  .Marg{
+    margin-left: 50%;
+    margin-top: 10%;
+  }
+}

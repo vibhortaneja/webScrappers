@@ -1,0 +1,53 @@
+{
+  "name": "expresspractice",
+  "version": "1.0.0",
+  "description": "practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc mocha"
+  },
+  "author": "shivani",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.5.0",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.1",
+    "cheerio": "^1.0.0-rc.2",
+    "cookie-parser": "~1.4.3",
+    "cors": "^2.8.4",
+    "cron": "^1.3.0",
+    "debug": "~2.6.3",
+    "email-verification": "^0.4.6",
+    "express": "^4.15.4",
+    "express-flash": "0.0.2",
+    "express-session": "^1.15.5",
+    "jsonwebtoken": "^8.0.1",
+    "log4js": "^2.3.3",
+    "mongoose": "^4.11.11",
+    "mongoose-title-case": "0.0.4",
+    "mongoose-validator": "^1.3.2",
+    "morgan": "~1.8.1",
+    "nodemailer": "^4.1.0",
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "passport": "^0.4.0",
+    "passport-facebook": "^2.1.1",
+    "passport-google-auth": "^1.0.2",
+    "passport-google-oauth": "^1.0.0",
+    "passport-google-oauth2": "^0.1.6",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "request": "^2.82.0",
+    "serve-favicon": "~2.4.2",
+    "twit": "^2.2.9"
+  },
+  "devDependencies": {
+    "chai": "^4.1.1",
+    "cookie-parser": "^1.4.3",
+    "mocha": "^3.5.0",
+    "nyc": "^11.1.0",
+    "should": "^12.0.0",
+    "sinon": "^3.2.1",
+    "supertest": "^3.0.0",
+    "tape": "^4.8.0"
+  }
+}

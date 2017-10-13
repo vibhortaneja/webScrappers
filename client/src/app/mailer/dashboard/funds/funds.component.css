@@ -1,0 +1,116 @@
+/* margin top*/
+
+.container-fluid {
+
+  margin-top: 55px;
+}
+
+
+
+
+/**
+ * card background color
+ */
+
+.cardStyle {
+  background-color: #80cbc4;
+}
+
+
+
+
+/**
+ * heading color
+ */
+
+.card-body h6 {
+  color: #004d40;
+}
+
+
+
+
+/**
+ * heading color
+ */
+
+.h7 {
+  color: #333;
+}
+
+
+
+
+/* for dashboard content */
+
+.marg {
+  margin-left: 7%;
+  margin-top: 7%;
+}
+
+
+
+
+/*width*/
+
+.drop {
+  width: 200px !important;
+}
+
+/*text styling*/
+
+.text {
+  color: white;
+  font-weight: bold;
+  background-color: black;
+}
+
+
+/*list items*/
+
+.list li {
+  float: left;
+  margin-left: 10px;
+}
+
+
+/*list*/
+
+.list {
+  list-style: none;
+}
+
+
+/**
+ * image width
+ */
+
+.img {
+  width: 100%;
+}
+
+
+/**
+ * card background color
+ */
+
+.card-data {
+  background-color: white;
+  margin-left: 3%;
+}
+
+
+
+/**
+ * left margin
+ */
+
+.fa {
+  margin-right: 1%;
+}
+
+@media (max-width: 767px){
+  .tweetMarg{
+    margin-left: 10%;
+  }
+}

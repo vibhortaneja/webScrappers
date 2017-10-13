@@ -1,0 +1,57 @@
+<!-- selector for navbaar -->
+<app-navbar></app-navbar>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+
+    <!-- selector for sidebar -->
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-8 marg">
+
+    <!-- form group for valid user -->
+      <form [formGroup]="userInfo" novalidate>
+        <div class="form-group">
+
+        <!-- label for user name -->
+          <label class="center-block">{{config.settings.NAME}}
+            <input class="form-control" formControlName="name">
+          </label>
+        </div>
+        <div class="form-group">
+
+        <!-- label for user emailid -->
+          <label class="center-block">{{config.settings.EMAIL}}
+            <input class="form-control" formControlName="email" readonly>
+          </label>
+        </div>
+        <div class="form-group">
+
+        <!-- label for alternative email -->
+          <label class="center-block">{{config.settings.ALTERNATE_EMAIL}}
+            <input class="form-control" formControlName="alternateEmail">
+          </label>
+        </div>
+        <div class="form-group">
+
+        <!-- label for update mobile number -->
+          <label class="center-block">{{config.settings.MOBILE}}
+            <input class="form-control" formControlName="mobile">
+          </label>
+        </div>
+
+        <!-- button to save update user data -->
+        <button (click)="updateUserInfo(userInfo,userInfo.get('email').value)">{{config.settings.SAVE}}</button>
+         
+         <!-- button to update prefrences -->
+          <button (click)="showConfirm()">{{config.settings.PREFERENCE}}</button>
+          
+      </form>
+
+      <!-- link for update password -->
+      <a [routerLink]="'/updatePassword'">Update Password</a>
+    </div>
+  </div>
+</div>

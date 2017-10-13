@@ -1,0 +1,19 @@
+<!-- sidebar started -->
+<div class="col-md-2 float-left col-1 pl-0 pr-0 collapse width show side fixed-top marg" id="sidebar">
+  <div class="list-group border-0 card text-center text-md-left">
+  
+    <a href="#menu1" class="list-group-item d-inline-block collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-dashboard"></i> <span class="d-none d-md-inline"></span> </a>
+    <!-- sidebar elements start-->
+    <a [routerLink]="'/dashboard'" class="list-group-item d-inline-block collapsed sidebar" data-parent="#sidebar"><i class="fa fa-film"></i> <span class="d-none d-md-inline dashboard">{{config.sidebar.DASHBOARD}}</span></a>
+
+    <a [routerLink]="'/currency'" class="list-group-item d-inline-block collapsed currency" data-parent="#sidebar"><i class="fa fa-usd"></i> <span class="d-none d-md-inline charts">{{config.sidebar.CURRENCY}}</span></a>
+
+    <a [routerLink]="'/nasdaq'" class="list-group-item d-inline-block collapsed nasdaq" data-parent="#sidebar"><i class="fa fa-line-chart"></i> <span class="d-none d-md-inline ">{{config.sidebar.NASDAQ}}</span></a>
+
+    <a [routerLink]="'/funds'" class="list-group-item d-inline-block collapsed funds" data-parent="#sidebar"><i class="fa fa-bar-chart-o"></i> <span class="d-none d-md-inline charts">{{config.sidebar.FUNDS}}</span></a>
+
+    <a [routerLink]="'/settings'" class="list-group-item d-inline-block collapsed settings" data-parent="#sidebar"><i class="fa fa-gear"></i> <span class="d-none d-md-inline settings">{{config.sidebar.SETTINGS}} </span></a>
+
+  </div>
+</div>
+<!-- sidebar elements ends -->
